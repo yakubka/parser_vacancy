@@ -16,7 +16,11 @@ TG_YOUR_CHAT_ID = int(os.getenv("TG_YOUR_CHAT_ID", "0"))
 SUPABASE_URL    = os.getenv("SUPABASE_URL", "")
 SUPABASE_KEY    = os.getenv("SUPABASE_KEY", "")
 
-# ─── Ollama ───────────────────────────────────────────────────────────────────
+# ─── Groq (LLM для сопроводительных писем) ───────────────────────────────────
+GROQ_API_KEY = os.getenv("GROQ_API_KEY", "")
+GROQ_MODEL   = os.getenv("GROQ_MODEL", "llama-3.3-70b-versatile")
+
+# ─── Ollama (оставлено для локального использования) ─────────────────────────
 OLLAMA_BASE_URL = os.getenv("OLLAMA_BASE_URL", "http://localhost:11434")
 OLLAMA_MODEL    = os.getenv("OLLAMA_MODEL", "gemma2:2b")
 
