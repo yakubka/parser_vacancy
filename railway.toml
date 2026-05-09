@@ -1,0 +1,8 @@
+[build]
+builder = "nixpacks"
+
+[deploy]
+# Запуск раз в день в 9:00 UTC (12:00 по Ташкенту)
+cronSchedule = "0 9 * * *"
+startCommand = "python main.py"
+restartPolicyType = "never"

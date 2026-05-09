@@ -1,0 +1,21 @@
+{
+  "name": "Yokub",
+
+  "profile_text": "Python backend developer with 2+ years of commercial experience. Currently working at Eutteum (Seoul, South Korea) and TabooVPN. Strong expertise in FastAPI, PostgreSQL, Redis, Docker, Nginx, asyncio, Pydantic, SQLAlchemy, Playwright, Celery, WebSocket, SSE, RBAC, JWT authentication. Experience with MongoDB, Vue 3, TypeScript, Node.js, Express, GitLab CI/CD. Built high-load LMS integration platforms, async payment processing with webhook architecture and idempotency keys, multi-layer Redis caching reducing API response times by 40%, browser automation pipelines with Playwright, RESTful APIs with role-based access control. Deployed services on Ubuntu VPS with Nginx and Docker. Looking for remote Python backend developer or backend engineer position. Open to international companies. Middle-level.",
+
+  "preferred_format": "remote",
+
+  "tech_stack": [
+    "python", "fastapi", "postgresql", "redis", "docker",
+    "nginx", "asyncio", "pydantic", "sqlalchemy", "playwright",
+    "celery", "websocket", "sse", "mongodb", "jwt",
+    "rbac", "rest api", "gitlab ci", "ubuntu", "flask",
+    "node.js", "typescript", "vue"
+  ],
+
+  "about_short": "Python backend разработчик, 2+ года коммерческого опыта. Работал в Eutteum (Сеул) и Veltrix IO (удалённо). Строю высоконагруженные FastAPI сервисы, настраиваю Redis-кэширование, деплою через Docker + Nginx на Ubuntu. Снизил время отклика API на 40%, автоматизировал QA-процессы на 70% через Playwright.",
+
+  "portfolio_url": "https://yokub.netlify.app",
+  "contact": "@urabemk",
+  "email": "yokubjon_nurullaev@mail.ru"
+}
