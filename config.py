@@ -4,9 +4,10 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # ─── Telegram клиент (для чтения каналов) ─────────────────────────────────────
-TG_API_ID       = int(os.getenv("TG_API_ID", "0"))
-TG_API_HASH     = os.getenv("TG_API_HASH", "")
-TG_PHONE        = os.getenv("TG_PHONE", "")
+TG_API_ID        = int(os.getenv("TG_API_ID", "0"))
+TG_API_HASH      = os.getenv("TG_API_HASH", "")
+TG_PHONE         = os.getenv("TG_PHONE", "")
+TG_SESSION_STRING = os.getenv("TG_SESSION_STRING", "")  # для Railway
 
 # ─── Telegram бот (для отправки результатов) ──────────────────────────────────
 TG_BOT_TOKEN    = os.getenv("TG_BOT_TOKEN", "")

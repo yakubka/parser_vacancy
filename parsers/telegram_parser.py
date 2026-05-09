@@ -3,6 +3,7 @@ from datetime import datetime, timezone, timedelta
 from dataclasses import dataclass, field
 from typing import Optional, Tuple
 from telethon import TelegramClient
+from telethon.sessions import StringSession
 import config
 from database import get_active_channels, update_channel_last_msg, update_channel_health
 
@@ -12,9 +13,18 @@ _client = None
 async def get_client():
     global _client
     if _client is None:
-        _client = TelegramClient("tg_session", config.TG_API_ID, config.TG_API_HASH)
+        # На Railway используем StringSession из переменной окружения,
+        # локально — файл tg_session.session
+        if config.TG_SESSION_STRING:
+            session = StringSession(config.TG_SESSION_STRING)
+        else:
+            session = "tg_session"
+        _client = TelegramClient(session, config.TG_API_ID, config.TG_API_HASH)
     if not _client.is_connected():
-        await _client.start(phone=config.TG_PHONE)
+        if config.TG_SESSION_STRING:
+            await _client.connect()  # не просит код — сессия уже авторизована
+        else:
+            await _client.start(phone=config.TG_PHONE)
     return _client
 
 
