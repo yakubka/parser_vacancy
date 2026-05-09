@@ -61,8 +61,20 @@ def extract_title(text: str) -> str:
     return lines[0][:200] if lines else "Вакансия"
 
 
+CV_SIGNALS = [
+    '#cv', '#резюме', '#resume', '#opentowork', '#ищуработу',
+    '#open_to_work', 'ищу работу', 'ищу проект', 'рассмотрю предложения',
+    'открыт к предложениям', 'в поиске работы', 'looking for job',
+    'available for work', '#нанимайте', 'портфолио:', 'github:', 'hh.ru/resume',
+]
+
 def is_vacancy_post(text: str) -> bool:
     text_lower = text.lower()
+
+    # Фильтруем резюме и CV-посты
+    if any(s in text_lower for s in CV_SIGNALS):
+        return False
+
     signals = ['вакансия', 'ищем', 'нужен', 'требуется', 'hiring', 'vacancy',
                'job', 'developer', 'разработчик', 'engineer', 'специалист',
                'зарплата', 'зп', 'salary', 'опыт от', 'experience']

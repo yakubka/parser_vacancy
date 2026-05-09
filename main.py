@@ -108,7 +108,13 @@ async def run(test_mode: bool = False):
     all_raw.extend(ht)
     print(f"   {len(ht)} вакансий")
 
-    print("📡 Парсим фриланс-сайты (Scrapling)...")
+    print("📡 Парсим Careered...")
+    from parsers.careered_parser import parse_careered
+    cd = await parse_careered()
+    all_raw.extend(cd)
+    print(f"   {len(cd)} вакансий")
+
+    print("📡 Парсим фриланс-сайты (bs4)...")
     from parsers.web_parser import WebParser
     web = await WebParser().parse_all()
     all_raw.extend(web)
